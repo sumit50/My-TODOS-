@@ -1,0 +1,56 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment files (never expose these)
+.env
+.env.*
+!.env.example
+
+# Node modules
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+*.local
+
+# Vite / React cache
+.vite/
+.vite_cache/
+.cache/
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Editor directories and system files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# Misc editor backup files
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.tmp
+
+# Mac system metadata
+._*
+
+# Test coverage outputs
+coverage/
+*.lcov
+
+# Lock files (KEEP the one you use)
+# If you use npm → keep package-lock.json
+# If you use yarn → keep yarn.lock
+# If you use pnpm → keep pnpm-lock.yaml
