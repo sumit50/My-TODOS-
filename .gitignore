@@ -7,6 +7,9 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+package.json
+package-lock.json
+
 # Environment files (never expose these)
 .env
 .env.*
@@ -54,3 +57,5 @@ coverage/
 # If you use npm → keep package-lock.json
 # If you use yarn → keep yarn.lock
 # If you use pnpm → keep pnpm-lock.yaml
+
+
