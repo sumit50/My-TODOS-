@@ -67,7 +67,7 @@ export const RegisterPage = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-400">
+    <div className="flex justify-center items-center h-screen bg-gray-700">
       <div>
         <AuthForm
           title="Create Account"

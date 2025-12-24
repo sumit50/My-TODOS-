@@ -9,7 +9,6 @@ import {DashbordPage} from "./Pages/Dashboard/MainPage";
 import {TodoPage} from "./Pages/todo/page";
 import {ForgetPage} from "./Pages/Forget/forget";
 import DataFilter from "./Pages/DataFilter/dataFilter";
-
 function App() {
   return (
     <>
@@ -23,6 +22,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/forget" element={<ForgetPage />} />
+        <Route path="/useTodos" element={<TodoPage />} />
 
         <Route path="/datafilter" element={<DataFilter />} />
 

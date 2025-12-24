@@ -40,7 +40,7 @@ export const AuthForm = ({
   return (
     <div className="w-full max-w-5xl p-2 rounded-xl  ">
       <div
-        className="w-[400px] p-10 rounded-xl shadow-xl bg-white rounded-2xl
+        className="w-[400px] p-10 rounded-xl shadow-xl bg-white rounded-2xl border-white
           shadow-xl p-10 border 
       
           transition-all duration-300 ease-out
