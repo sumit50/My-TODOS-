@@ -6,7 +6,7 @@ import ProtectedRoute from "./Components/ProtectedRoute";
 import {LoginPage} from "./Pages/auth/login";
 import {RegisterPage} from "./Pages/auth/register";
 import {DashbordPage} from "./Pages/Dashboard/MainPage";
-import {TodoPage} from "./Pages/todo/page";
+import TodoPage from "./Pages/todo/page";
 import {ForgetPage} from "./Pages/Forget/forget";
 import DataFilter from "./Pages/DataFilter/dataFilter";
 function App() {

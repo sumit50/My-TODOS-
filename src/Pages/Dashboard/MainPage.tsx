@@ -109,7 +109,6 @@ export const DashbordPage = () => {
             <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
             Productivity Dashboard
           </div>
-
           {/* Welcome */}
           <div className="mb-2">
             <h1 className="text-4xl font-bold">
@@ -122,8 +121,9 @@ export const DashbordPage = () => {
             Organize your day, focus your mind, and get things done efficiently
             with a clean and powerful todo manager.
           </p>
-          {/* STATS (Now Dynamic) */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+          <div className="h-2"></div> {/* STATS SECTION - Now Dynamic */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {/* Removed mb-12 from here */}
             {isLoading ? (
               // Loading skeleton
               <>
@@ -171,7 +171,6 @@ export const DashbordPage = () => {
                     {stats.pending}
                   </h3>
                 </div>
-
                 <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition">
                   <p className="text-sm text-gray-500 mb-1">Completed</p>
                   <h3 className="text-3xl font-bold text-green-600">
@@ -181,9 +180,14 @@ export const DashbordPage = () => {
               </>
             )}
           </div>
-
-          {/* FEATURE CARDS */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap- mb-12 mt-16">
+          {/* ============================================
+              ADD SPACER DIV HERE FOR PROPER SEPARATION
+              ============================================ */}
+          <div className="h-6"></div>{" "}
+          {/* This adds 64px space between sections */}
+          {/* FEATURE CARDS - Clean and simple */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 mb-12">
+            {/* Removed mt- from here, using spacer div instead */}
             <div className="bg-blue-50 p-6 rounded-2xl border border-blue-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
               <div className="text-3xl mb-4">✍️</div>
               <h3 className="text-xl font-semibold text-blue-700 mb-2">
@@ -212,8 +216,9 @@ export const DashbordPage = () => {
               </p>
             </div>
           </div>
-
           {/* CTA */}
+                    <div className="h-2"></div>{" "}
+
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 bg-gray-50 p-6 rounded-2xl border border-gray-200">
             <p className="text-gray-700 text-base font-medium">
               Ready to take control of your tasks?
