@@ -57,7 +57,7 @@ export const DashbordPage = () => {
         }
 
         const response = await axios.get(
-          `${import.meta.env.VITE_API_URL}/dashboard/stats`,
+          `${import.meta.env.VITE_API_URL}/user/getDashboardStats`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -217,8 +217,7 @@ export const DashbordPage = () => {
             </div>
           </div>
           {/* CTA */}
-                    <div className="h-2"></div>{" "}
-
+          <div className="h-2"></div>{" "}
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 bg-gray-50 p-6 rounded-2xl border border-gray-200">
             <p className="text-gray-700 text-base font-medium">
               Ready to take control of your tasks?

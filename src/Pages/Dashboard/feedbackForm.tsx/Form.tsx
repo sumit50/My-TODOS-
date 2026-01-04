@@ -80,6 +80,7 @@ export const Form = () => {
   };
 
   return (
+    <>
     <div>
       <div className="flex justify-center mt-30 mb-24 px-4">
         <div
@@ -211,5 +212,8 @@ export const Form = () => {
         </div>
       </div>
     </div>
+
+    </>
+    
   );
 };

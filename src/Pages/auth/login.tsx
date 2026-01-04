@@ -1,9 +1,11 @@
 import React from "react";
-import {AuthForm} from "../../Components/Auth";
-import {Link, useNavigate} from "react-router-dom";
+import { AuthForm } from "../../Components/Auth";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
 import Snowfall from "react-snowfall";
+
+
 export const LoginPage = () => {
   const navigate = useNavigate();
 
@@ -20,40 +22,42 @@ export const LoginPage = () => {
     try {
       const res = await axios.post(
         `${import.meta.env.VITE_API_URL}/user/login-user`,
-        {email, password}
+        { email, password }
       );
 
-      // success toast
-      toast.success("Login successful!");
+      const { token, user } = res.data;
 
       // store token
-      localStorage.setItem("token", res.data.token);
+      localStorage.setItem("token", token);
 
-      // store user (optional)
-      if (res.data.user) {
-        localStorage.setItem("currentUser", JSON.stringify(res.data.user));
+      // store user
+      if (user) {
+        localStorage.setItem("currentUser", JSON.stringify(user));
       }
 
-      navigate("/dashboard");
+      toast.success("Login successful!");
+
+      // 🔐 ROLE BASED REDIRECT (THIS IS THE KEY)
+      if (user?.role === "admin") {
+        navigate("/admin");
+      } else {
+        navigate("/dashboard");
+      }
     } catch (err: any) {
       toast.error(err.response?.data?.message || "Login failed");
     }
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-white-200 bg-gray-700 ">
-      <Snowfall
-        color="#dee4fd
+    <div className="flex justify-center items-center h-screen bg-gray-700">
+      <Snowfall color="#dee4fd" />
 
-"
-      />
-
-      <div className=" ">
+      <div>
         <AuthForm
-          title="Login to  MYTODO!"
+          title="Login to MYTODO!"
           fields={[
-            {name: "email", label: "Email", type: "email"},
-            {name: "password", label: "Password", type: "password"},
+            { name: "email", label: "Email", type: "email" },
+            { name: "password", label: "Password", type: "password" },
           ]}
           btnText="Login"
           onSubmit={handleLogin}
@@ -66,7 +70,9 @@ export const LoginPage = () => {
         </Link>
 
         <Link to="/register">
-          <p className="text-gray-400 mt-4 text-center">Create an account</p>
+          <p className="text-gray-400 mt-4 text-center">
+            Create an account
+          </p>
         </Link>
       </div>
     </div>

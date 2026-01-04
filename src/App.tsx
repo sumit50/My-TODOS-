@@ -8,7 +8,9 @@ import {RegisterPage} from "./Pages/auth/register";
 import {DashbordPage} from "./Pages/Dashboard/MainPage";
 import TodoPage from "./Pages/todo/page";
 import {ForgetPage} from "./Pages/Forget/forget";
+import Admin from "./Components/admin/admin";
 import DataFilter from "./Pages/DataFilter/dataFilter";
+import Profile from "./Pages/profile/profile";
 function App() {
   return (
     <>
@@ -23,6 +25,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/forget" element={<ForgetPage />} />
         <Route path="/useTodos" element={<TodoPage />} />
+        <Route path="/admin" element={<Admin />} />
 
         <Route path="/datafilter" element={<DataFilter />} />
 
@@ -50,6 +53,22 @@ function App() {
           element={
             <ProtectedRoute>
               <DataFilter />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute>
+              <Admin />
             </ProtectedRoute>
           }
         />
